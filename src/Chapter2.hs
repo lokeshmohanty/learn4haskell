@@ -748,9 +748,10 @@ value of the element itself
 🕯 HINT: Use combination of 'map' and 'replicate'
 -}
 smartReplicate :: [Int] -> [Int]
-smartReplicate []     = []
-smartReplicate (l:ls) = replicate l l ++ smartReplicate ls
--- smartReplicate' l = concat $ zipWith replicate l l
+smartReplicate = concatMap (\x -> replicate x x)
+-- smartReplicate' []     = []
+-- smartReplicate '(l:ls) = replicate l l ++ smartReplicate ls
+-- smartReplicate'' l = concat $ zipWith replicate l l
 
 {- |
 =⚔️= Task 9
